@@ -1,0 +1,43 @@
+.bookSearchPage {
+    margin: 0 auto;
+    /*height: 500px;*/
+
+    width: 350px;
+}
+
+.bookForm {
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    color: black;
+    padding: 2%;
+    border: 2px solid black;
+    border-radius: 10px;
+    /*height: 300px;*/
+}
+
+.bookSearch {
+    width: 100%;
+}
+
+.book-search-form {
+    display: none;
+}
+
+.book-delete-form{
+  display: none;
+}
+
+.book-remind-form{
+    display: none;
+}
+
+.card {
+  margin: 1rem;
+  background: lightgrey;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-radius: 12px;
+  border: 1px solid black;
+  overflow: hidden;
+  transition: all .2s linear;
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Service!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheer" href="css/background.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <link rel="stylesheet" href="css/book.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+      <p id="loading" hidden> Talking to server! Please wait! </p>
+
+        <!--       nav bar for 550+  -->
+        <div class="navigationDiv">
+            <div class="row" id="fullNavBar">
+                <div class="two columns">
+                    <img src="images/bookicon.png" alt="lion" class="lionLogo navigationLink" id="home">
+                </div>
+                <div class="two columns navigationLink" hidden>
+                    <button id="book">Books</button>
+                </div>
+                <div class="two columns navigationLink" hidden>
+                    <button id="logoutButton">Log Out</button>
+                </div>
+                <div class="two columns navigationLink" hidden>
+                    <button id="profile">Profile</button>
+                </div>
+
+                <div class="two columns navigationLink" hidden>
+                    <button id="manageBooks">Manage</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="homePage" hidden>
+            <div class="row homePageContainer">
+                <div class="homeContent navigationLink" id="book">
+                    <h1>Books</h1>
+                    <p>Search and Checkout Books Here!</p>
+                </div>
+                <div class="homeContent navigationLink" id="profile">
+                    <h1>Profile!</h1>
+                    <p>Visit Your Profile Here!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="profilePage hidden">
+            <div class="profileField">
+                <form class="profileDisplay profileContent">
+                    <h1>Library User Profile</h1>
+                    <div class="smallProfileDisplayField">
+                        <input type="text" id="nameDisplayField" placeholder="Name" class="smallProfileDisplay" required/>
+                    </div>
+                    <div class="smallProfileDisplayField">
+                        <input type="text" id="phoneDisplayField" placeholder="Phone Number" class="smallProfileDisplay" required/>
+                    </div>
+                    <div class="smallProfileDisplayField">
+                        <input type="text" id="emailDisplayField" placeholder="Email Address" class="smallProfileDisplay" required/>
+                    </div>
+                    <div class="largeProfileDisplayField">
+                        <textarea type="text" id="loanedBooksList" placeholder="Books loaned to you." class="largeProfileDisplay"></textarea>
+                    </div>
+                    <div class="largeProfileDisplayField">
+                        <textarea type="text" id="notesList" placeholder="Your Notes." class="largeProfileDisplay"></textarea>
+                    </div>
+
+                </form>
+
+                <form class="profileDisplay profileContent">
+                    <h1>Manage Book Notes</h1>
+                    <div class="smallProfileDisplayField">
+                        <input type="text" id="bookIDNoteField" placeholder="book id" class="smallProfileDisplay" required/>
+                    </div>
+                    <div class="smallProfileDisplayField">
+                        <input type="text" id="noteNumber" placeholder="note id" class="smallProfileDisplay" required/>
+                    </div>
+                    <div class="largeProfileDisplayField">
+                        <textarea type="text" id="bookNoteInfo" placeholder="Note text for add or update note here" class="enterFieldInputLarge"></textarea>
+                    </div>
+                    <button type="submit" class="submitFormButton" id="submitNote">Add Note.</button>
+                    <button type="submit" class="submitFormButton" id="updateNote">Update Note.</button>
+                    <button type="submit" class="submitFormButton" id="deleteNote">Delete Note.</button>
+
+                </form>
+
+                <form class="profileDisplay profileContent">
+                    <h1>Favorite Books!</h1>
+
+                    <div class="enterFieldDiv">
+                        <textarea type="text" id="goalsEnter" placeholder="Put in your wishlist of books here" class="enterFieldInputLarge"></textarea>
+                    </div>
+                    <div class="largeProfileDisplayField">
+                        <textarea type="text" id="favorite" placeholder="Your Favorite Books." class="largeProfileDisplay"></textarea>
+                    </div>
+                    <button type="submit" class="submitFormButton" id="submitForm">Update Wishes!</button>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="accountPage hidden">
+            <div class="login-page">
+                <div class="form">
+                    <form class="register-form">
+                      <input type="text" id="firstNameField" placeholder="First Name" class="accountInput" />
+                      <input type="text" id="lastNameField" placeholder="Last Name" class="accountInput" />
+                        <input type="tel" id="phoneNumberField" placeholder="Phone Number" class="accountInput" />
+                        <input type="text" id="emailAddressField" placeholder="Email Address" class="accountInput" />
+                        <input type="password" id="passwordField" placeholder="Password" class="accountInput" />
+
+                        <button id="createAccountButton">Create your account!</button>
+                        <p class="message">Already registered? <a href="#">Sign In!</a></p>
+                    </form>
+                    <form class="login-form">
+                        <input type="text" id="nameEnter" placeholder="Email" class="accountInput" />
+                        <input type="password" id="userPasswordAttempt" placeholder="Password" class="accountInput" />
+                        <button id="loginButton">Login!</button>
+                        <p class="notRegisteredMsg">Not registered? <a href="#">Create an account!</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="bookPage hidden" id="bookSearchPage">
+            <div class="bookSearcPage">
+                <div class="bookForm">
+                    <form class="book-search-form">
+                        <input type="text" id="startdate" placeholder="Enter a starting publish date" class="bookSearch" />
+                        <input type="text" id="enddate" placeholder="Enter an ending publish date" class="bookSearch" />
+                        <select name="Genre" id="genre"  class="bookSearch" form="book-search-form">
+                          <option value = "sci-fi">Sci-Fi</option>
+                          <option value = "thriller">Thriller</option>
+                          <option value = "action">Action</option>
+                          <option value = "romance">Romance</option>
+                          <option value = "comedy">Comedy</option>
+                        </select>
+                        <input type="text" id="author" placeholder="Enter an Author" class="bookSearch" />
+                        <button id="searchBooks">Search Books!</button>
+                        <p class="bookCheckoutMsg">Already have a Book ID? <a href="#">Go to book checkout!</a></p>
+                    </form>
+
+                    <form class="book-checkout-form">
+                        <input type="text" id="bookIdEnter" placeholder="Book ID #" class="bookSearch" />
+                        <button id="checkoutBook">Check Out a Book!</button>
+                        <p class="bookReturnMsg">Need to return a book? <a href="#">Return books here!</a></p>
+                        <p class="bookSearchMsg">Need a different Book? <a href="#">Search our database!</a></p>
+                    </form>
+
+                    <form class="book-return-form">
+                        <input type="text" id="returnId" placeholder="Book ID #" class="bookSearch" />
+                        <input type="text" id="loanId" placeholder="Loan ID #" class="bookSearch" />
+                        <button id="returnBook">Return This Book</button>
+                        <p class="bookSearchMsg">Want a new Book? <a href="#">Search our database!</a></p>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="manageBooksPage hidden">
+            <div class="bookSearcPage">
+                <div class="bookForm">
+                    <form class="book-delete-form">
+                        <input type="text" id="bookId" placeholder="Enter a bookId" class="bookSearch" />
+
+
+                        <button id="deleteBook">Delete Book</button>
+                        <p class="bookAddMsg">Want to Add a Book? <a href="#">Add a Book</a></p>
+                        <p class="bookRemindMsg">Need to remind users to turn in their books? <a href="#">Remind Users</a></p>
+                    </form>
+
+                    <form class="book-remind-form">
+                        <p class="bookRemindMsg"> Enter a Loan ID or just remind all users here.</p>
+                        <input type="text" id="remindLoanId" placeholder="Enter a Loan Id" class="bookSearch" />
+
+                        <button id="remindUser">Remind User</button>
+                        <button id="remindAllUsers">Remind All Users</button>
+                        <p class="bookAddMsg">Want to Add a Book? <a href="#">Add a Book</a></p>
+                        <p class="bookDeleteMsg">Need to remove a book? <a href="#">Delete a Book</a></p>
+                    </form>
+
+                    <form class="book-add-form">
+                      <input type="text" id="bookName" placeholder="Enter a book title" class="bookSearch" />
+                      <!-- <input type="text" id="genre" placeholder="Enter a genre" class="bookSearch" /> -->
+                      <select name="Genre" id="genre"  class="bookSearch" form="book-add-form">
+                        <option value = "sci-fi">Sci-Fi</option>
+                        <option value = "thriller">Thriller</option>
+                        <option value = "action">Action</option>
+                        <option value = "romance">Romance</option>
+                        <option value = "comedy">Comedy</option>
+                      </select>
+                      <input type="text" id="authorFirstName" placeholder="Enter the author's first name" class="bookSearch" />
+                      <input type="text" id="authorLastName" placeholder="Enter the author's last name" class="bookSearch" />
+                      <input type="text" id="publishDate" placeholder="Enter the publish date" class="bookSearch" />
+                        <button id="addBook">Add a Book</button>
+                        <p class="bookDeleteMsg">Need to remove a book? <a href="#">Delete a Book</a></p>
+                        <p class="bookRemindMsg">Need to remind users to turn in their books? <a href="#">Remind Users</a></p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/utils.js"></script>
+        <script src="scripts/api_handler.js"></script>
+        <script src="scripts/login.js"></script>
+        <script src="scripts/nav.js"></script>
+        <script src="scripts/user.js"></script>
+        <script src="scripts/book.js"></script>
+        <script src="scripts/main.js"></script>
+
+    </div>
+</body>
+
+</html>

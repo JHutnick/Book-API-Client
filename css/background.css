@@ -1,0 +1,35 @@
+@media screen and (max-width: 550px) {
+    body {
+        background-color: black;
+        color: black;
+        text-shadow: 1px 0px 1px beige;
+    }
+    .container {
+        background-image: url("http://www.thisiscolossal.com/wp-content/uploads/2017/06/library-1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: black;
+        background-attachment: fixed;
+        border-radius: 10px;
+        margin 0 auto;
+    }
+}
+
+@media screen and (min-width: 551px) {
+    body {
+        background-color: black;
+        color: black;
+        text-shadow: 1px 0px 1px beige;
+        padding: .5%;
+    }
+    .container {
+        background-image: url("https://www.lut.fi/documents/10633/29948/tutustu-meihin-kirjasto-paakuva2-615x295.jpg/444ce999-b524-45e8-ae72-5ececed62b12?t=1492583857901");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: black;
+        /*        z-index: -10;*/
+        background-attachment: fixed;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+}

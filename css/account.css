@@ -1,0 +1,24 @@
+.login-page {
+    margin: 0 auto;
+    height: 500px;
+    width: 350px;
+}
+
+.form {
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    color: black;
+    padding: 2%;
+    border: 2px solid beige;
+    border-radius: 10px;
+    height: 300px;
+}
+
+.accountInput {
+    width: 100%;
+}
+
+.register-form {
+    display: none;
+}

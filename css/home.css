@@ -1,0 +1,92 @@
+@media screen and (max-width: 550px) {
+    .homeContent {
+        width: 280px;
+        height: 220px;
+        margin: 2%;
+    }
+    .homeContent:hover {
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .sectionBackgroundImage {
+        position: absolute;
+        opacity: .4;
+        width: auto;
+        height: 220px;
+        border-radius: 5px;
+    }
+    .sectionBackgroundImage:hover {
+        opacity: .3;
+    }
+}
+
+/*
+@media screen and (min-width: 551px) and (max-width: 959px) {
+    .homeContent {
+        width: 400px;
+        height: 280px;
+        margin: 2%;
+    }
+    .homeContent:hover {
+        border: 2px solid beige;
+        border-radius: 10px;
+    }
+    .sectionBackgroundImage {
+        position: absolute;
+        opacity: .3;
+        width: auto;
+        width: 400px;
+        border-radius: 5px;
+    }
+    .sectionBackgroundImage:hover {
+        opacity: .2;
+    }
+    .homeWidget {
+        position: absolute;
+        right: 3%;
+        top: 25%;
+        border: 2px solid beige;
+        border-radius: 10px;
+    }
+}
+*/
+
+@media screen and (min-width: 551px) {
+    .homeContent {
+        width: 90%;
+        height: 200px;
+        margin: 5%;
+        clear: right;
+    }
+    .homeContent:hover {
+        border-radius: 10px;
+        border: 2px solid black;
+        opacity: 1;
+    }
+    .sectionBackgroundImage {
+        position: absolute;
+        opacity: .3;
+        width: auto;
+        width: 600px;
+        border-radius: 5px;
+    }
+    .sectionBackgroundImage:hover {
+        opacity: .05;
+    }
+    .homeWidget {
+        position: absolute;
+        right: 3%;
+        top: 20%;
+        background-image: url("../images/backgroundpic.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10px;
+        padding: 2%;
+    }
+    .homeWidget:hover {
+        border: 2px solid black;
+    }
+    .homeWidget p {
+        margin: 0;
+    }
+}

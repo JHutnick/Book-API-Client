@@ -1,0 +1,52 @@
+.hidden {
+    display: none;
+}
+
+.navigationDiv {
+    margin: .2%;
+}
+
+@media screen and (max-width: 550px) {
+    #fullNavBar {
+        display: none;
+    }
+    .row.mobileHamburgerNav {
+        margin-bottom: 32%;
+    }
+    .navMenuIcon {
+        width: 4em;
+        border-radius: 10px;
+    }
+    .navIcon {
+        width: 40px;
+        height: 40px;
+        border-radius: 3px;
+    }
+    .lionLogo {
+        width: 60px;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (min-width: 551px) {
+    .row.mobileHamburgerNav {
+        display: none;
+    }
+    #fullNavBar {
+        margin-bottom: 2%;
+    }
+    button {
+        width: 95%;
+        text-align: center;
+        padding: 0;
+    }
+    .navMenuIcon {
+        width: 6em;
+        border-radius: 10px;
+        float: left;
+    }
+    lionLogo {
+        width: 100px;
+        border-radius: 10px;
+    }
+}
